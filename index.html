@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YamuGo - Ride Booking</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <nav>
+        <h1>🚕 YamuGo</h1>
+        <div>
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#booking">Book Ride</a>
+        </div>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+    <div>
+        <h2>Your Journey, Our Priority!</h2>
+        <p>Book your ride easily, safely and comfortably with YamuGo.</p>
+        <a href="#booking" class="btn">Book Your Ride</a>
+    </div>
+</section>
+
+<section id="services">
+    <h2>Our Vehicles</h2>
+    <div class="vehicles">
+        <div class="vehicle">🛺<h3>Tuk Tuk</h3><p>Rs. 120 / km</p></div>
+        <div class="vehicle">🚗<h3>Car</h3><p>Rs. 200 / km</p></div>
+        <div class="vehicle">🏍️<h3>Bike</h3><p>Rs. 80 / km</p></div>
+        <div class="vehicle">🚐<h3>Van</h3><p>Rs. 300 / km</p></div>
+    </div>
+</section>
+
+<section id="booking">
+    <h2>Book Your Ride</h2>
+
+    <form id="bookingForm">
+        <input type="text" id="customer" placeholder="Your Name" required>
+        <input type="text" id="pickup" placeholder="Pickup Location" required>
+        <input type="text" id="destination" placeholder="Destination" required>
+
+        <input type="number" id="distance" placeholder="Distance (KM)" min="1" step="0.1" required>
+
+        <select id="vehicle" required>
+            <option value="">Select Vehicle</option>
+            <option value="Tuk Tuk">Tuk Tuk</option>
+            <option value="Car">Car</option>
+            <option value="Bike">Bike</option>
+            <option value="Van">Van</option>
+        </select>
+
+        <button type="submit">Calculate & Book</button>
+    </form>
+
+    <h3 id="fare">Estimated Fare: Rs. 0.00</h3>
+    <p id="message"></p>
+</section>
+
+<section>
+    <h2>Booking History</h2>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Pickup</th>
+                    <th>Destination</th>
+                    <th>Vehicle</th>
+                    <th>Fare</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="bookingList"></tbody>
+        </table>
+    </div>
+</section>
+
+<footer>
+    <h3>YamuGo 🚕</h3>
+    <p>Your Journey, Our Priority!</p>
+    <p>© 2026 YamuGo. All Rights Reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

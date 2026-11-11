@@ -1,4 +1,6 @@
 
+/* GENERAL STYLES */
+
 * {
     margin: 0;
     padding: 0;
@@ -11,14 +13,16 @@ html {
 }
 
 body {
-    background: #f4f7f5;
+    background: #f5f8f6;
     color: #222;
 }
 
+/* HEADER AND NAVIGATION */
+
 header {
     background: #087f5b;
-    padding: 20px 8%;
     color: white;
+    padding: 20px 8%;
 }
 
 nav {
@@ -29,8 +33,10 @@ nav {
     gap: 15px;
 }
 
-nav h1 {
+.logo {
     font-size: 30px;
+    font-weight: bold;
+    color: #FFD700;
 }
 
 nav a {
@@ -38,51 +44,66 @@ nav a {
     text-decoration: none;
     margin-left: 20px;
     font-weight: bold;
+    transition: 0.3s;
 }
 
 nav a:hover {
-    color: #ffe066;
+    color: #FFD700;
 }
 
+/* HERO SECTION */
+
 .hero {
-    min-height: 420px;
-    background: linear-gradient(120deg, #087f5b, #20c997);
+    min-height: 450px;
+    background: linear-gradient(120deg, #064e3b, #20c997);
     color: white;
     display: flex;
     align-items: center;
     padding: 60px 10%;
 }
 
-.hero h2 {
-    font-size: 45px;
+.hero h1 {
+    font-size: 50px;
     margin-bottom: 20px;
+    color: #FFD700;
 }
 
 .hero p {
-    font-size: 18px;
+    font-size: 19px;
     margin-bottom: 30px;
+    color: white;
 }
 
 .btn {
     display: inline-block;
-    background: #ffe066;
+    background: #FFD700;
     color: #222;
     padding: 14px 25px;
     border-radius: 8px;
     text-decoration: none;
     font-weight: bold;
+    transition: 0.3s;
 }
 
+.btn:hover {
+    background: #ffec80;
+    transform: translateY(-3px);
+}
+
+/* COMMON SECTION STYLES */
+
 section {
-    padding: 55px 8%;
+    padding: 60px 8%;
     text-align: center;
 }
 
 section h2 {
     color: #087f5b;
+    font-size: 32px;
     margin-bottom: 30px;
-    font-size: 30px;
 }
+
+/* VEHICLE SECTION */
 
 .vehicles {
     display: grid;
@@ -95,18 +116,27 @@ section h2 {
     padding: 30px 15px;
     border-radius: 15px;
     box-shadow: 0 4px 12px #00000015;
-    font-size: 35px;
+    font-size: 40px;
+    transition: 0.3s;
+}
+
+.vehicle:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 8px 20px #087f5b30;
 }
 
 .vehicle h3 {
-    font-size: 20px;
+    font-size: 21px;
     margin: 15px 0;
 }
 
 .vehicle p {
-    font-size: 16px;
     color: #087f5b;
+    font-size: 17px;
+    font-weight: bold;
 }
+
+/* BOOKING FORM */
 
 form {
     max-width: 500px;
@@ -117,39 +147,58 @@ form {
     box-shadow: 0 4px 12px #00000015;
 }
 
-input, select {
+input,
+select {
     width: 100%;
     padding: 14px;
     margin: 10px 0;
     border: 1px solid #ccc;
     border-radius: 7px;
     font-size: 15px;
+    outline: none;
+}
+
+input:focus,
+select:focus {
+    border-color: #087f5b;
+    box-shadow: 0 0 5px #087f5b50;
 }
 
 button {
-    width: 100%;
-    padding: 14px;
     background: #087f5b;
     color: white;
     border: none;
+    padding: 14px;
     border-radius: 7px;
     cursor: pointer;
     font-size: 16px;
     font-weight: bold;
+    transition: 0.3s;
+}
+
+form button {
+    width: 100%;
+    margin-top: 10px;
 }
 
 button:hover {
     background: #056344;
 }
 
+/* FARE DISPLAY */
+
 #fare {
-    margin-top: 25px;
     color: #087f5b;
+    margin-top: 25px;
+    font-size: 23px;
 }
 
 #message {
-    margin-top: 12px;
+    margin-top: 15px;
+    font-weight: bold;
 }
+
+/* BOOKING HISTORY */
 
 .table-container {
     overflow-x: auto;
@@ -159,11 +208,15 @@ table {
     width: 100%;
     border-collapse: collapse;
     background: white;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
-th, td {
+th,
+td {
     padding: 14px;
     border: 1px solid #ddd;
+    text-align: center;
 }
 
 th {
@@ -171,11 +224,22 @@ th {
     color: white;
 }
 
+tr:hover {
+    background: #f0fff7;
+}
+
+/* CANCEL BUTTON */
+
 .cancel-btn {
     background: #e03131;
     padding: 8px 12px;
-    width: auto;
 }
+
+.cancel-btn:hover {
+    background: #b02525;
+}
+
+/* FOOTER */
 
 footer {
     background: #064e3b;
@@ -184,7 +248,19 @@ footer {
     padding: 30px;
 }
 
+footer h2 {
+    color: #FFD700;
+    margin-bottom: 15px;
+}
+
+footer p {
+    margin-top: 10px;
+}
+
+/* RESPONSIVE DESIGN */
+
 @media (max-width: 600px) {
+
     nav {
         flex-direction: column;
     }
@@ -193,7 +269,27 @@ footer {
         margin: 8px;
     }
 
-    .hero h2 {
-        font-size: 32px;
+    .hero {
+        padding: 50px 7%;
+    }
+
+    .hero h1 {
+        font-size: 35px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    section {
+        padding: 40px 5%;
+    }
+
+    section h2 {
+        font-size: 26px;
+    }
+
+    form {
+        padding: 20px;
     }
 }
